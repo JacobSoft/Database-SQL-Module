@@ -1,0 +1,2 @@
+--5. For each library branch, retrieve the branch name 
+--and the total number of books loaned out from that branch.SELECT lb.BranchName, COUNT (bl.BookID) AS BooksOutFROM Library_Branch AS lbINNER JOIN Book_Loans AS bl ON (lb.BranchID = bl.BranchID)WHERE DueDate > '3/1/2017'GROUP BY lb.BranchName

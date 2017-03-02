@@ -1,0 +1,2 @@
+--7. For each book authored (or co-authored) by "Stephen King", 
+--retrieve the title and the number of copies owned by the library --branch whose name is "Central"SELECT ba.AuthorName, b.Title, lb.BranchName, bc.No_of_Copies FROM Book_Authors AS baINNER JOIN Book AS b ON (ba.Bookid = b.Bookid)INNER JOIN Book_Copies AS bc ON (b.Bookid = bc.Bookid)INNER JOIN Library_Branch AS lb ON (lb.Branchid = bc.Branchid)WHERE AuthorName = 'Stephen King' AND lb.BranchName = 'Central'
